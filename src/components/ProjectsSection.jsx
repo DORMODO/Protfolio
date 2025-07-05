@@ -7,8 +7,8 @@ const projects = [
     description: "A travel blog showcasing beautiful destinations.",
     image: "/projects/aroundTheWorld.png",
     tags: ["React", "TailwindCSS", "React Router"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://around-the-world-nu-eight.vercel.app/",
+    githubUrl: "https://github.com/DORMODO/around-the-world",
   },
 ];
 

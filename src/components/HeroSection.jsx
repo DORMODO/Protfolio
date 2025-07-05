@@ -7,11 +7,8 @@ export const HeroSection = () => {
       className="relative min-h-screen flex flex-col items-center justify-center px-4"
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
-
         <div className="space-y-6">
-          
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            
             <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
@@ -20,16 +17,15 @@ export const HeroSection = () => {
             <span className="opacity-0 animate-fade-in-delay-2"> Badr</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I turn bold ideas into beautiful, high-impact web experiences.
-            <br />
-            Let’s build something unforgettable together.
+            I create stellar web experiences with modern technologies.
+            Specializing in full-stack web development, I build interfaces that
+            are both beautiful and functional.
           </p>
-          
+
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button hover:scale-200">
               View My Work
             </a>
-            
           </div>
         </div>
       </div>

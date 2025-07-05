@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -16,10 +17,11 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -28,7 +30,9 @@ export const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+        isScrolled
+          ? "py-3 bg-primary/10 dark:bg-background/80 backdrop-blur-lg shadow-md"
+          : "py-5 bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -37,8 +41,8 @@ export const Navbar = () => {
           className="text-xl font-bold text-primary flex items-center"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground">Youssef Badr</span>{" "}
-            portoflio
+            <span className="text-glow text-foreground">YoussefBadr</span>{" "}
+            Portfolio
           </span>
         </a>
 
@@ -48,7 +52,7 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              className="text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold"
             >
               {item.name}
             </a>
@@ -62,7 +66,6 @@ export const Navbar = () => {
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
@@ -77,7 +80,7 @@ export const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className="text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
